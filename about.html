@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — OS TECH HUB</title>
+<meta name="description" content="Learn the story behind OS TECH HUB — a small, growing brand curating premium tech and desk gadgets in India, built on honest pricing and customer trust.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#07080F">
+<link rel="canonical" href="https://ostechhub.in/about.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#07080F;
+    --surface:#0D0F1A;
+    --surface-2:#121520;
+    --border:#1E2235;
+    --border-glow:#3D4AFF;
+    --text:#E6E8F4;
+    --text-muted:#6B72A0;
+    --accent:#7C6EFF;
+    --accent-2:#B06EFF;
+    --neon:#4DFFED;
+    --neon-dim:rgba(77,255,237,0.08);
+    --whatsapp:#25D366;
+    --radius:16px;
+    --maxw:1200px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+      radial-gradient(700px circle at 15% 10%, rgba(124,110,255,0.18), transparent 55%),
+      radial-gradient(600px circle at 85% 20%, rgba(176,110,255,0.14), transparent 55%),
+      radial-gradient(800px circle at 50% 100%, rgba(77,255,237,0.07), transparent 55%),
+      radial-gradient(400px circle at 80% 80%, rgba(124,110,255,0.1), transparent 50%),
+      var(--bg);
+  }
+  h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  button{font-family:inherit;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  /* ---------- HEADER (identical to index.html) ---------- */
+  .site-top{position:sticky;top:0;z-index:100;}
+  header{
+    background:rgba(7,8,15,0.88);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{
+    max-width:var(--maxw);margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{
+    font-size:1.15rem;font-weight:700;letter-spacing:1px;background:none;border:none;
+    cursor:pointer;display:flex;align-items:center;gap:2px;
+    background:linear-gradient(90deg,#fff 30%,var(--accent) 70%,var(--accent-2) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+  .brand .cursor{-webkit-text-fill-color:var(--neon);color:var(--neon);}
+  .cart-btn{
+    position:relative;background:var(--surface);border:1px solid var(--border);
+    width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;color:var(--text);transition:border-color .2s,box-shadow .2s;
+  }
+  .cart-btn:hover{border-color:var(--accent);box-shadow:0 0 12px rgba(124,110,255,0.3);}
+  .header-right{display:flex;align-items:center;gap:16px;}
+  .nav-track-link{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.3px;color:var(--text-muted);
+    display:flex;align-items:center;gap:6px;transition:color .2s ease;white-space:nowrap;
+  }
+  .nav-track-link:hover{color:var(--neon);}
+  .nav-track-link.active{color:var(--neon);}
+  @media (max-width:480px){.nav-track-link span{display:none;}}
+  .cart-badge{
+    position:absolute;top:-6px;right:-6px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;
+    min-width:18px;height:18px;border-radius:9px;display:none;align-items:center;justify-content:center;padding:0 4px;
+  }
+
+  /* ---------- ANNOUNCEMENT BAR (identical to index.html) ---------- */
+  .announce-bar{
+    background:linear-gradient(90deg,rgba(124,110,255,0.12),rgba(176,110,255,0.1));
+    border-bottom:1px solid var(--border);
+    overflow:hidden;position:relative;
+  }
+  .announce-viewport{
+    overflow:hidden;position:relative;padding-right:36px;
+    mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);
+  }
+  .announce-track{
+    display:flex;align-items:center;gap:40px;width:max-content;
+    padding:9px 0;white-space:nowrap;
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.4px;color:var(--text-muted);
+    animation:announce-scroll 26s linear infinite;
+  }
+  .announce-bar:hover .announce-track{animation-play-state:paused;}
+  @media (prefers-reduced-motion:reduce){.announce-track{animation:none;}}
+  .announce-track span{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+  @keyframes announce-scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+  .announce-close{
+    position:absolute;right:8px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:var(--text-muted);cursor:pointer;padding:4px;
+    display:flex;transition:color .2s;z-index:2;
+  }
+  .announce-close:hover{color:var(--accent);}
+  [hidden]{display:none !important;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:72px 24px 44px;gap:18px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+    width:60%;height:1px;
+    background:linear-gradient(90deg,transparent,var(--accent),var(--accent-2),transparent);
+  }
+  .hero-orbit{position:absolute;inset:0;z-index:-1;pointer-events:none;}
+  .orbit-dot{position:absolute;border-radius:50%;filter:blur(2px);}
+  .orbit-dot.od-1{width:90px;height:90px;top:14%;left:10%;background:radial-gradient(circle at 30% 30%,rgba(77,255,237,0.55),transparent 70%);}
+  .orbit-dot.od-2{width:130px;height:130px;top:60%;right:8%;background:radial-gradient(circle at 30% 30%,rgba(176,110,255,0.5),transparent 70%);}
+  .orbit-dot.od-3{width:60px;height:60px;top:28%;right:20%;background:radial-gradient(circle at 30% 30%,rgba(124,110,255,0.6),transparent 70%);}
+  @media (prefers-reduced-motion:no-preference){
+    .orbit-dot.od-1{animation:drift1 9s ease-in-out infinite;}
+    .orbit-dot.od-2{animation:drift2 11s ease-in-out infinite;}
+    .orbit-dot.od-3{animation:drift3 7.5s ease-in-out infinite;}
+  }
+  @keyframes drift1{0%,100%{transform:translate(0,0);}50%{transform:translate(14px,-18px);}}
+  @keyframes drift2{0%,100%{transform:translate(0,0);}50%{transform:translate(-18px,14px);}}
+  @keyframes drift3{0%,100%{transform:translate(0,0);}50%{transform:translate(10px,12px);}}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--neon);background:rgba(77,255,237,0.08);border:1px solid rgba(77,255,237,0.2);
+    padding:5px 14px;border-radius:20px;display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem,7vw,3.8rem);line-height:1.05;margin:0;font-weight:700;letter-spacing:-0.01em;
+    background:linear-gradient(135deg,#ffffff 0%,#c8c4ff 40%,var(--accent-2) 80%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+  .hero p.tagline{color:var(--text-muted);font-size:1.05rem;line-height:1.6;max-width:540px;margin:0;}
+
+  /* ---------- ANIMATIONS / SCROLL REVEAL ---------- */
+  @keyframes fadeInUp{
+    from{opacity:0;transform:translateY(16px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{animation:none !important;opacity:1 !important;transform:none !important;}
+  }
+  .reveal{opacity:0;transform:translateY(16px);}
+  .reveal.in-view{animation:fadeInUp .6s ease both;}
+
+  /* ---------- GENERIC SECTION WRAPPER ---------- */
+  .section{max-width:var(--maxw);margin:0 auto;padding:64px 24px;}
+  .section-alt{background:linear-gradient(180deg,rgba(124,110,255,0.04),transparent);}
+  .section-head{max-width:var(--maxw);margin:0 auto 30px;padding:0 24px;text-align:center;}
+  .section-head h2{font-size:1.7rem;margin:6px 0 0;}
+  .section-lede{
+    max-width:640px;margin:14px auto 0;color:var(--text-muted);font-size:.95rem;line-height:1.6;
+  }
+
+  /* ---------- GLASS STORY CARDS ---------- */
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media (max-width:820px){.story-grid{grid-template-columns:1fr;}}
+  .glass-card{
+    position:relative;
+    background:rgba(18,21,36,0.55);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:34px 30px;
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.35),0 0 0 1px rgba(124,110,255,0.06);
+    transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease;
+  }
+  .glass-card:hover{border-color:rgba(124,110,255,0.35);transform:translateY(-3px);}
+  .glass-card::before{
+    content:'';position:absolute;inset:0;border-radius:20px;padding:1px;
+    background:linear-gradient(135deg,rgba(124,110,255,0.4),transparent 40%,transparent 60%,rgba(77,255,237,0.25));
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;
+    pointer-events:none;
+  }
+  .glass-card .card-eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--neon);margin-bottom:10px;display:block;
+  }
+  .glass-card h3{font-size:1.25rem;margin:0 0 14px;}
+  .glass-card p{color:var(--text-muted);font-size:.94rem;line-height:1.75;margin:0 0 12px;}
+  .glass-card p:last-child{margin-bottom:0;}
+
+  /* ---------- TRUST / PROMISE / OFFER GRID (shared card style) ---------- */
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media (max-width:760px){.trust-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:480px){.trust-grid{grid-template-columns:1fr;}}
+  .trust-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:22px 18px;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:12px;
+    transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+  }
+  .trust-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 26px rgba(124,110,255,0.14);}
+  .trust-icon{
+    width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:rgba(124,110,255,0.12);color:var(--neon);flex-shrink:0;
+  }
+  .trust-card h3{font-size:.92rem;margin:0;}
+  .trust-card p{font-size:.8rem;color:var(--text-muted);margin:0;line-height:1.5;}
+
+  /* ---------- MISSION BANNER ---------- */
+  .banner{
+    position:relative;border-radius:20px;overflow:hidden;
+    background:
+      radial-gradient(500px circle at 20% 20%,rgba(124,110,255,0.25),transparent 60%),
+      radial-gradient(500px circle at 85% 80%,rgba(77,255,237,0.12),transparent 55%),
+      var(--surface);
+    border:1px solid var(--border);
+    padding:56px 32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;
+  }
+  .banner h2{font-size:clamp(1.6rem,4vw,2.3rem);margin:0;max-width:680px;line-height:1.2;}
+  .banner p{color:var(--text-muted);max-width:560px;margin:0;font-size:1rem;line-height:1.65;}
+
+  /* ---------- THANK YOU / MESSAGE CARD ---------- */
+  .message-card{max-width:720px;margin:0 auto;}
+  .message-card p{font-size:1rem;}
+  .signature{
+    margin-top:22px;padding-top:18px;border-top:1px solid var(--border);
+    font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--text);font-size:.95rem;
+  }
+  .signature span{display:block;font-family:'Inter',sans-serif;font-weight:400;color:var(--text-muted);font-size:.82rem;margin-top:3px;}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    padding:15px 26px;border-radius:10px;font-weight:600;letter-spacing:.2px;cursor:pointer;
+    border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-size:.95rem;transition:filter .2s,box-shadow .2s,border-color .2s,color .2s;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    color:#fff;
+    box-shadow:0 4px 20px rgba(124,110,255,0.35);
+  }
+  .btn-primary:hover{filter:brightness(1.12);box-shadow:0 4px 28px rgba(124,110,255,0.5);}
+  .btn-outline{background:transparent;border-color:var(--border);color:var(--text);}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 12px rgba(124,110,255,0.15);}
+
+  /* ---------- FOOTER (identical to index.html) ---------- */
+  footer{
+    border-top:1px solid var(--border);padding:52px 24px 30px;text-align:center;
+    background:linear-gradient(0deg,rgba(124,110,255,0.04),transparent);
+    position:relative;
+  }
+  footer::before{
+    content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:40%;height:1px;
+    background:linear-gradient(90deg,transparent,var(--accent),var(--accent-2),transparent);
+  }
+  .footer-grid{
+    max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;
+    text-align:left;padding-bottom:34px;
+  }
+  @media (max-width:700px){.footer-grid{grid-template-columns:1fr;text-align:center;gap:28px;}}
+  .footer-col h4{font-size:.78rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--text-muted);margin:0 0 14px;}
+  .footer-col p{font-size:.85rem;color:var(--text-muted);line-height:1.65;margin:0;max-width:320px;}
+  @media (max-width:700px){.footer-col p{max-width:none;margin:0 auto;}}
+  .footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .footer-col ul a{font-size:.85rem;color:var(--text-muted);transition:color .2s;}
+  .footer-col ul a:hover{color:var(--accent);}
+  .footer-divider{max-width:var(--maxw);margin:0 auto;border-top:1px solid var(--border);padding-top:20px;}
+  footer .brand-line{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;margin-bottom:10px;font-size:1.2rem;letter-spacing:.3px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+  footer .copyright{color:var(--text-muted);font-size:.76rem;margin-top:16px;letter-spacing:.2px;}
+
+  /* ---------- MOBILE SPACING REFINEMENTS ---------- */
+  @media (max-width:600px){
+    .hero{padding:48px 20px 32px;}
+    .glass-card{padding:26px 20px;}
+    .header-inner{padding:14px 18px;}
+    .section{padding:48px 20px;}
+    .banner{padding:40px 22px;}
+    footer{padding:44px 20px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="site-top">
+  <div class="announce-bar" id="announceBar">
+    <div class="announce-viewport" aria-hidden="false">
+      <div class="announce-track">
+        <span>🚚 Fast shipping across India</span>
+        <span>⚡ New gadgets added every month</span>
+        <span>🔥 Trending desk &amp; room tech</span>
+        <span aria-hidden="true">🚚 Fast shipping across India</span>
+        <span aria-hidden="true">⚡ New gadgets added every month</span>
+        <span aria-hidden="true">🔥 Trending desk &amp; room tech</span>
+      </div>
+    </div>
+    <button class="announce-close" id="announceClose" aria-label="Dismiss announcement bar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <button class="brand" onclick="location.href='index.html'" aria-label="OS TECH HUB home">OS TECH HUB<span class="cursor">_</span></button>
+      <div class="header-right">
+        <a class="nav-track-link active" href="about.html" aria-label="About Us">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="11.5"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>About Us</span>
+        </a>
+        <a class="nav-track-link" href="track.html" aria-label="Track your order">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span>Track Order</span>
+        </a>
+        <button class="cart-btn" onclick="location.href='index.html'" aria-label="Open cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-orbit" aria-hidden="true">
+      <div class="orbit-dot od-1"></div>
+      <div class="orbit-dot od-2"></div>
+      <div class="orbit-dot od-3"></div>
+    </div>
+    <div class="eyebrow">✦ our story</div>
+    <h1>About OS TECH HUB</h1>
+    <p class="tagline">Premium tech products. Honest pricing. A brand built to earn your trust.</p>
+  </section>
+
+  <!-- ================= OUR STORY + WHY PRICES ARE DIFFERENT ================= -->
+  <section class="section">
+    <div class="story-grid">
+      <div class="glass-card reveal">
+        <span class="card-eyebrow">how it all started</span>
+        <h3>How It All Started</h3>
+        <p>OS TECH HUB started with a pretty simple frustration: a lot of "premium" tech and desk gadgets online are either overpriced, poorly made, or both. We wanted something in between — products that actually feel good to own, without the inflated price tag that usually comes attached to anything that looks nice.</p>
+        <p>We're not trying to sell hundreds of random products. We'd rather pick a smaller line-up of things we'd genuinely want on our own desks — useful, visually appealing, and worth the money — than fill a store with filler just to look big.</p>
+        <p>We're still early. We're not the biggest name in this space, and we're not going to pretend otherwise. What we can promise is that every product on this site was chosen on purpose.</p>
+      </div>
+
+      <div class="glass-card reveal">
+        <span class="card-eyebrow">built on trust, not high margins</span>
+        <h3>Why Our Prices Are Different</h3>
+        <p>We're a growing brand, which honestly works in your favour. Instead of squeezing the highest possible margin out of every single order, we've chosen to focus on giving you real value — even if that means a smaller profit for us right now.</p>
+        <p>The thinking is straightforward: if your first experience with us is a good one, you'll come back. That matters more to us than making the most out of one sale. It's why a lot of our prices sit lower than what people usually expect for the quality they're getting.</p>
+        <p>This isn't a permanent "launch discount" gimmick. It's just how we'd rather run things while we grow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR PROMISE ================= -->
+  <section class="section section-alt">
+    <div class="section-head">
+      <div class="eyebrow">✦ what you can count on</div>
+      <h2>Our Promise</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9"/></svg></span>
+        <h3>Carefully Selected Products</h3>
+        <p>We choose products we believe are genuinely useful and enjoyable.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h3>Quality Checked</h3>
+        <p>Every order is checked before dispatch.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
+        <h3>Secure Shopping</h3>
+        <p>Your payments are handled through secure payment systems.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+        <h3>Customer First</h3>
+        <p>We're always looking to improve and provide a better shopping experience.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <h3>Affordable Pricing</h3>
+        <p>Great products don't always have to come with a high price tag.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHAT WE OFFER ================= -->
+  <section class="section">
+    <div class="section-head">
+      <div class="eyebrow">✦ our collection</div>
+      <h2>What We Offer</h2>
+      <p class="section-lede">A focused line-up across a few categories — not an endless catalogue, just things worth having.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="12" rx="2"/><line x1="7" y1="20" x2="17" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span>
+        <h3>Desk Setup Accessories</h3>
+        <p>Small upgrades that make your workspace feel more put-together.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></span>
+        <h3>Smart Lighting</h3>
+        <p>Lamps and light bars that set the mood without over-complicating things.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+        <h3>Mobile Accessories</h3>
+        <p>Practical add-ons for the device you use the most.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.2 6.6H21l-5.4 4 2.1 6.6-5.7-4.1-5.7 4.1 2.1-6.6L3 8.6h6.8z"/></svg></span>
+        <h3>Lifestyle Gadgets</h3>
+        <p>The fun, slightly indulgent picks that just make everyday life nicer.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+        <h3>Productivity Essentials</h3>
+        <p>Tools that quietly help you get through the day with less friction.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7m-14 0v8a2 2 0 0 0 2 2h3m9-10l2 2m-2-2v8a2 2 0 0 1-2 2h-3m0 0v-6a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v6"/></svg></span>
+        <h3>Modern Home Tech</h3>
+        <p>Small pieces of tech that make a room feel more current.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY CHOOSE US ================= -->
+  <section class="section section-alt">
+    <div class="section-head">
+      <div class="eyebrow">✦ the hub difference</div>
+      <h2>Why Customers Choose Us</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
+        <h3>Premium Quality</h3>
+        <p>Products chosen for how they feel to actually use, not just how they photograph.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <h3>Affordable Pricing</h3>
+        <p>Fair prices, on purpose — not a discount code chasing a bigger sale.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
+        <h3>Secure Checkout</h3>
+        <p>Every payment goes through a secure gateway — your details stay protected.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+        <h3>Carefully Packed Orders</h3>
+        <p>Each order is packed properly, because it's someone's actual delivery, not just a number.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+        <h3>Friendly Customer Support</h3>
+        <p>Message us on WhatsApp or Instagram and you'll get a real reply from a real person.</p>
+      </div>
+      <div class="trust-card reveal">
+        <span class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>Growing Community</h3>
+        <p>More people are discovering us every month, and we're grateful for every one of them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR MISSION ================= -->
+  <section class="section">
+    <div class="banner reveal">
+      <div class="eyebrow">✦ our mission</div>
+      <h2>Our Mission</h2>
+      <p>Our mission is simple — to become a trusted destination for premium tech products by combining quality, affordability and a great customer experience. Nothing more complicated than that.</p>
+    </div>
+  </section>
+
+  <!-- ================= A MESSAGE FROM US ================= -->
+  <section class="section section-alt">
+    <div class="section-head">
+      <div class="eyebrow">✦ from us to you</div>
+      <h2>Thank You</h2>
+    </div>
+    <div class="glass-card message-card reveal">
+      <p>If you've made it this far, thank you — genuinely. We know there's no shortage of places to buy tech online, and the fact that you're even considering us means a lot while we're still building this up.</p>
+      <p>Every single order motivates us to do better — better products, better packing, better support. Nothing here is on autopilot. When your package goes out, it's packed with care, because we know you're placing your trust in a brand you've probably never ordered from before.</p>
+      <p>We don't take that lightly, and we won't stop trying to earn it.</p>
+      <div class="signature">
+        Om &amp; Shreyash
+        <span>Founders, OS TECH HUB</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="section">
+    <div class="banner reveal">
+      <h2>Ready to Upgrade Your Setup?</h2>
+      <a class="btn btn-primary" href="index.html">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Shop Now
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="brand-line">OS TECH HUB</div>
+      <p>A carefully curated line-up of smart desk, room and pocket gadgets. Every order is confirmed personally over WhatsApp or Instagram — no middlemen, no marketplace noise.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html#bestsellers">Best Sellers</a></li>
+        <li><a href="index.html#trending">Trending Gadgets</a></li>
+        <li><a href="index.html#offers">Special Offers</a></li>
+        <li><a href="index.html#catalog">All Products</a></li>
+        <li><a href="index.html#faq">Shipping, Returns &amp; FAQ</a></li>
+        <li><a href="track.html">Track Order</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get in Touch</h4>
+      <ul>
+        <li><a href="https://wa.me/919082810462" target="_blank" rel="noopener">WhatsApp: +91 90828 10462</a></li>
+        <li><a href="https://instagram.com/ostechhub.in" target="_blank" rel="noopener">Instagram: @ostechhub.in</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-divider">
+    <div class="copyright">© <span id="year"></span> OS TECH HUB. All products ordered directly via WhatsApp or Instagram.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const announceClose = document.getElementById('announceClose');
+  if(announceClose){
+    announceClose.addEventListener('click', () => {
+      document.getElementById('announceBar').hidden = true;
+    });
+  }
+
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+  }
+</script>
+</body>
+</html>
