@@ -1,6 +1,0 @@
-# OS TECH HUB — robots.txt
-# Allow full crawling for search engines and AI assistants/crawlers.
-User-agent: *
-Allow: /
-
-Sitemap: https://ostechhub.in/sitemap.xml
